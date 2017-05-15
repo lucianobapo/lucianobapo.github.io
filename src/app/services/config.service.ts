@@ -1,28 +1,26 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class ConfigService {
 
-  private _mandante = 'ilhanet';
-  private _resourceUrl;
-  private _googlePlusWebClientId;
+    private _resourceUrl;
+    private static _config = {};
 
-  constructor() {
-  }
+    constructor() {
+    }
 
-  get mandante(): string {
-    return this._mandante;
-  }
+    get resourceUrl(): string {
+        this._resourceUrl = 'https://westgroup.ilhanet.com';
+        // this._resourceUrl = 'https://westgroup.localhost.com';
+        return this._resourceUrl;
+    }
 
-  get resourceUrl(): string {
-    // this._resourceUrl = 'https://erpnet-v5.ilhanet.com';
-    this._resourceUrl = 'https://westgroup.ilhanet.com';
-    return this._resourceUrl;
-  }
+    static get(key: any) {
+        if (this._config.hasOwnProperty(key)) return this._config[key];
+        return key;
+    }
 
-  get googlePlusWebClientId() {
-    this._googlePlusWebClientId = '4910560041-g7fqeg0ibo10eid6q4c0qn1jqnk3airq.apps.googleusercontent.com';
-    return this._googlePlusWebClientId;
-  }
-
+    static set(key: any) {
+        this._config = key;
+    }
 }

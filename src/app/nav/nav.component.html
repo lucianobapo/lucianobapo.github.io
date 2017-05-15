@@ -2,9 +2,8 @@
     <div class="container">
         <div class="navbar-header">
             <!-- Collapsed Hamburger -->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#spark-navbar-collapse">
-                <span class="sr-only">Toggle Navigation</span>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse">
+                <span class="sr-only">{{ t('Toggle Navigation') }}</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -12,7 +11,7 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="/">
-                <i class="fa fa-btn fa-sun-o"></i> {{ getConfig('app.name') }}
+                <i class="fa fa-btn fa-sun-o"></i> {{ getConfig('appName') }}
             </a>
         </div>
 
@@ -20,14 +19,14 @@
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 <li><a href="/">{{ t('Home') }}</a></li>
-                <li><a href="/data">{{ t('Data') }}</a></li>
+                <!--<li><a href="/data">{{ t('Data') }}</a></li>-->
             </ul>
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Login / Registration Links -->
-                <li><a href="/login">{{ t('Login') }}</a></li>
-                <li><a href="/register">{{ t('Register') }}</a></li>
+                <!--<li><a href="/login">{{ t('Login') }}</a></li>-->
+                <!--<li><a href="/register">{{ t('Register') }}</a></li>-->
             </ul>
         </div>
     </div>
