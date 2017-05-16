@@ -14,7 +14,7 @@ export class DataScreenComponent extends BaseComponent implements OnInit {
     public modalColumns = [];
     public modalTitle = '';
     public modalTab;
-    public data;
+    public data = [];
     public pagination = {};
     public pages = [];
 
@@ -47,6 +47,8 @@ export class DataScreenComponent extends BaseComponent implements OnInit {
     }
 
     changeTab(tab): void {
+        this.data = [];
+        this.pagination = {};
         let sufix='';
         if (this.pagination.hasOwnProperty('current_page')) sufix='?page='+this.pagination['current_page'];
         this.dataService.httpGet(tab.apiUrl+sufix)
@@ -59,6 +61,8 @@ export class DataScreenComponent extends BaseComponent implements OnInit {
     }
 
     changePage(tab, page): void {
+        this.data = [];
+        this.pagination = {};
         this.dataService.httpGet(tab.apiUrl+'?page='+page)
             .map(response=>{
                 return response.json();
