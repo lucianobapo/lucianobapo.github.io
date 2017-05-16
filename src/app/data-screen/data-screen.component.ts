@@ -48,9 +48,9 @@ export class DataScreenComponent extends BaseComponent implements OnInit {
 
     changeTab(tab): void {
         this.data = [];
-        this.pagination = {};
         let sufix='';
         if (this.pagination.hasOwnProperty('current_page')) sufix='?page='+this.pagination['current_page'];
+        this.pagination = {};
         this.dataService.httpGet(tab.apiUrl+sufix)
             .map(response=>{
                 return response.json();
